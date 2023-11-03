@@ -1,0 +1,19 @@
+{
+    "name": "monzur/ai1wp-ajax-infinity-scroll-for-wordpress",
+    "description": "Load post on ajax infinity scroll in WordPress.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "Aaisfw\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "monzuralam",
+            "email": "monzur707@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
