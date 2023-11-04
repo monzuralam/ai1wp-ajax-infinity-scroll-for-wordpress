@@ -23,6 +23,7 @@ final class Ai1wp_Ajax_Infinity_Scroll_for_WordPress {
     public function __construct() {
         $this->aaisfw_constant();
         add_action( 'plugins_loaded', [ $this, 'init_plugin'] );
+        add_action( 'init', [ $this, 'ajax_request'] );
     }
 
     /**
@@ -52,7 +53,18 @@ final class Ai1wp_Ajax_Infinity_Scroll_for_WordPress {
      * Initialize the plugin
      */
     public function init_plugin(){
+        if( is_admin() ){
+            new \Aaisfw\Admin();
+        }else{
+            new \Aaisfw\Frontend();
+        }
+    }
 
+    /**
+     * Ajax Request handle
+     */
+    public function ajax_request(){
+        new \Aaisfw\Frontend\Ajax();
     }
 
 }
